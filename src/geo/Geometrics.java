@@ -1,58 +1,63 @@
 package geo;
+
+import java.util.Random;
+
 public class Geometrics {
-    private static double x = 10.0;
-    private static double y = 5.0;
-    private static double z = 3.0;
-    private static int x1 = 8;
-    private static int y1 = 7;
-    private static int z1 = 10;
-    private static int x2 = 100;
-    private static int y2 = 57;
-    private static int z2 = 129;
-    private static int x3 = 45;
-    private static int y3 = 89;
-    private static int z3 = 69;
+   
+
+
+    public static double squareArea(double x){
+        return x*x;
+    }
+    public static double squarePerimeter( double x){
+        return 4*x;
+    }
+    public static double rectangleArea(double x, double y){
+        return x*y;
+    }
+    public static double rectanglePerimeter(double x,double y){
+        return (x+y)*2;
+    }
+    public static double zoneSphere(double x,double y,double z){
+        return (Math.PI * z * (3 * Math.pow(y, 2) + 3 * Math.pow(x, 2) + Math.pow(z, 2))) / 6;
+    }
+    public static double sphereCylinder( double z){
+        return (Math.PI * Math.pow(z, 3) / 6);
+    }
+    public static double ungula(double x,double z){
+        return (double) (2 * x * z) / 3;
+    }
 
     public static void main(String[] args) {
-        // area ... Fläche
-        System.out.println("Square area");
-        System.out.println("x * x = " + x * x);
-        System.out.println("x1 * x1 = " + x1 * x1);
-        System.out.println("x2 * x2 = " + x2 * x2);
-        System.out.println("y * y = " + y * y);
+       
+      System.out.println(squareArea(5));
+      System.out.println(squarePerimeter(7));
+      System.out.println(rectangleArea(5.6, 8.8));
+      System.out.println(rectanglePerimeter(7.5, 9.2));
+      System.out.println(zoneSphere(3, 5, 8.2));
+      System.out.println(sphereCylinder(7.7));
+      System.out.println(ungula(2.2, 3.3));
+       
+       Random r = new Random();
+      
+       
+       System.out.println(squareArea(r.nextDouble()));
+       System.out.println(rectangleArea(r.nextDouble(),r.nextDouble() ));
 
-        // perimeter ... Umfang
-        System.out.println("Square perimeter");
-        System.out.println("4 * x = " + 4 * x);
-        System.out.println("4 * x1 = " + 4 * x1);
-        System.out.println("4 * x2 = " + 4 * x2);
-        System.out.println("4 * y = " + 4 * y);
+       System.out.println(r.nextDouble()+" "+ r.nextDouble());
 
-        System.out.println("Rectangle area");
-        System.out.println("x * y = " + x * y);
-        System.out.println("x1 * y1 = " + x1 * y1);
-        System.out.println("x2 * y2 = " + x2 * y2);
-        System.out.println("x3 * y3 = " + x3 * y3);
 
-        System.out.println("Rectangle perimeter");
-        System.out.println("x + y = " + x + y);
-        System.out.println("x1 + y1 = " + x1 + y1);
-        System.out.println("x2 + y2 = " + x2 + y2);
-        System.out.println("x3 + y3 = " + x3 + y3);
+       double randomValueWithRange = 10+(100-10)*r.nextDouble();
+       System.out.println(randomValueWithRange    );
 
-        System.out.println("We can also calculate some volumes");
-        /*
-            z is our height
-            y is our radius
-         */
-        System.out.println("Zone of a sphere");
-        double v = (Math.PI * z * (3 * Math.pow(y, 2) + 3 * Math.pow(x, 2) + Math.pow(z, 2))) / 6;
-        System.out.println(v);
-
-        System.out.println("Sphere with cylinder");
-        System.out.println(Math.PI * Math.pow(z, 3) / 6);
-
-        System.out.println("Ungula");
-        System.out.println((double) (2 * x3 * z3) / 3);
+       
+       
+       
+       
+       
+       
+       
+       
+       
     }
 }
